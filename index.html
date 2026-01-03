@@ -1,69 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Fitness App - Tiles</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f0f0;
-    }
+<!-- Replace previous code with this for Style 2 -->
+<style>
+  .tile {
+    background: #4CAF50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
 
-    .tile-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
+  .tile:hover {
+    background: #43A047;
+  }
 
-    .tile {
-      position: relative;
-      height: 180px;
-      border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-
-    .tile:hover {
-      transform: scale(1.03);
-    }
-
-    .tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .tile-label {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 12px;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="tile-grid">
-    <div class="tile">
-      <img src="https://images.unsplash.com/photo-1584466997083-bd0d1f2ed3ad?fit=crop&w=600&h=400&q=80" alt="Workout">
-      <div class="tile-label">Workout Plans</div>
-    </div>
-    <div class="tile">
-      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?fit=crop&w=600&h=400&q=80" alt="Progress">
-      <div class="tile-label">Progress Tracker</div>
-    </div>
-    <div class="tile">
-      <img src="https://images.unsplash.com/photo-1543352634-7e81790b3e05?fit=crop&w=600&h=400&q=80" alt="Meal Plan">
-      <div class="tile-label">Meal Plans</div>
-    </div>
-  </div>
-</body>
-</html>
+  .tile::before {
+    content: "🏋️";
+    font-size: 2rem;
+    margin-right: 8px;
+  }
+</style>

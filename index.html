@@ -38,12 +38,6 @@
       align-items: center;
       height: 200px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.4);
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .tile:hover {
-      background-color: #c29e2b;
     }
 
     .tile h2 {
@@ -63,36 +57,34 @@
   <div class="dashboard">
     <div class="tile">
       <h2>Macros</h2>
-      <canvas id="macrosChart"></canvas>
+      <canvas id="macrosChart" width="160" height="100"></canvas>
     </div>
     <div class="tile">
       <h2>BMI</h2>
-      <canvas id="bmiChart"></canvas>
+      <canvas id="bmiChart" width="160" height="100"></canvas>
     </div>
     <div class="tile">
       <h2>BMR / TDEE</h2>
-      <canvas id="tdeeChart"></canvas>
+      <canvas id="tdeeChart" width="160" height="100"></canvas>
     </div>
     <div class="tile">
       <h2>Workout Log</h2>
-      <canvas id="workoutChart"></canvas>
+      <canvas id="workoutChart" width="160" height="100"></canvas>
     </div>
     <div class="tile">
       <h2>Meal Tracker</h2>
-      <canvas id="mealChart"></canvas>
+      <canvas id="mealChart" width="160" height="100"></canvas>
     </div>
     <div class="tile">
       <h2>Macro Chart</h2>
-      <canvas id="macroChart"></canvas>
+      <canvas id="macroChart" width="160" height="100"></canvas>
     </div>
   </div>
 
   <script>
     const mustard = '#D4AF37';
-    const dark = '#1f1f1f';
 
-    // Macros Donut Chart
-    new Chart(document.getElementById('macrosChart'), {
+    new Chart(macrosChart, {
       type: 'doughnut',
       data: {
         labels: ['Protein', 'Carbs', 'Fats'],
@@ -102,11 +94,15 @@
           borderWidth: 0
         }]
       },
-      options: { plugins: { legend: { display: false } }, cutout: '65%' }
+      options: {
+        responsive: true,
+        animation: false,
+        plugins: { legend: { display: false } },
+        cutout: '65%'
+      }
     });
 
-    // BMI Horizontal Bar
-    new Chart(document.getElementById('bmiChart'), {
+    new Chart(bmiChart, {
       type: 'bar',
       data: {
         labels: ['BMI'],
@@ -117,6 +113,7 @@
         }]
       },
       options: {
+        animation: false,
         indexAxis: 'y',
         scales: {
           x: { min: 0, max: 40, grid: { display: false } },
@@ -126,13 +123,11 @@
       }
     });
 
-    // BMR / TDEE Line
-    new Chart(document.getElementById('tdeeChart'), {
+    new Chart(tdeeChart, {
       type: 'line',
       data: {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
         datasets: [{
-          label: 'Calories Burned',
           data: [2000, 2100, 2050, 2150, 2200],
           borderColor: mustard,
           backgroundColor: 'transparent',
@@ -140,30 +135,29 @@
         }]
       },
       options: {
+        animation: false,
         plugins: { legend: { display: false } },
         scales: { x: { display: false }, y: { display: false } }
       }
     });
 
-    // Workout Log Bar
-    new Chart(document.getElementById('workoutChart'), {
+    new Chart(workoutChart, {
       type: 'bar',
       data: {
         labels: ['Bench', 'Squat', 'Deadlift'],
         datasets: [{
-          label: 'kg lifted',
           data: [80, 100, 120],
           backgroundColor: mustard
         }]
       },
       options: {
+        animation: false,
         plugins: { legend: { display: false } },
         scales: { x: { display: false }, y: { display: false } }
       }
     });
 
-    // Meal Tracker Pie
-    new Chart(document.getElementById('mealChart'), {
+    new Chart(mealChart, {
       type: 'pie',
       data: {
         labels: ['Breakfast', 'Lunch', 'Dinner'],
@@ -173,11 +167,13 @@
           borderWidth: 0
         }]
       },
-      options: { plugins: { legend: { display: false } } }
+      options: {
+        animation: false,
+        plugins: { legend: { display: false } }
+      }
     });
 
-    // Macro Breakdown Stacked Bar
-    new Chart(document.getElementById('macroChart'), {
+    new Chart(macroChart, {
       type: 'bar',
       data: {
         labels: ['Today'],
@@ -188,6 +184,7 @@
         ]
       },
       options: {
+        animation: false,
         plugins: { legend: { display: false } },
         responsive: true,
         scales: {

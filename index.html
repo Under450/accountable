@@ -47,11 +47,11 @@
 
     .chart-container {
       width: 100%;
-      height: 120px;
+      height: 140px;
       position: relative;
     }
 
-    .chart-container canvas {
+    canvas {
       width: 100% !important;
       height: 100% !important;
     }
@@ -88,24 +88,29 @@
 
   <script>
     const mustard = '#D4AF37';
+    const darkText = '#111';
 
     window.onload = () => {
+      const options = {
+        animation: false,
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { ticks: { color: darkText }, grid: { display: false } },
+          y: { ticks: { color: darkText }, grid: { display: false } }
+        }
+      };
+
       new Chart(macrosChart, {
-        type: 'doughnut',
+        type: 'bar',
         data: {
           labels: ['Protein', 'Carbs', 'Fats'],
           datasets: [{
             data: [30, 50, 20],
-            backgroundColor: [mustard, '#ffd700', '#a58c3f'],
-            borderWidth: 0
+            backgroundColor: [mustard, '#ffd700', '#a58c3f']
           }]
         },
-        options: {
-          responsive: true,
-          animation: false,
-          plugins: { legend: { display: false } },
-          cutout: '65%'
-        }
+        options
       });
 
       new Chart(bmiChart, {
@@ -113,38 +118,23 @@
         data: {
           labels: ['BMI'],
           datasets: [{
-            label: 'Your BMI',
             data: [24],
             backgroundColor: mustard
           }]
         },
-        options: {
-          animation: false,
-          indexAxis: 'y',
-          scales: {
-            x: { min: 0, max: 40, grid: { display: false } },
-            y: { grid: { display: false } }
-          },
-          plugins: { legend: { display: false } }
-        }
+        options
       });
 
       new Chart(tdeeChart, {
-        type: 'line',
+        type: 'bar',
         data: {
           labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
           datasets: [{
             data: [2000, 2100, 2050, 2150, 2200],
-            borderColor: mustard,
-            backgroundColor: 'transparent',
-            tension: 0.4
+            backgroundColor: mustard
           }]
         },
-        options: {
-          animation: false,
-          plugins: { legend: { display: false } },
-          scales: { x: { display: false }, y: { display: false } }
-        }
+        options
       });
 
       new Chart(workoutChart, {
@@ -156,48 +146,31 @@
             backgroundColor: mustard
           }]
         },
-        options: {
-          animation: false,
-          plugins: { legend: { display: false } },
-          scales: { x: { display: false }, y: { display: false } }
-        }
+        options
       });
 
       new Chart(mealChart, {
-        type: 'pie',
+        type: 'bar',
         data: {
           labels: ['Breakfast', 'Lunch', 'Dinner'],
           datasets: [{
             data: [400, 600, 500],
-            backgroundColor: [mustard, '#ffe082', '#bfa442'],
-            borderWidth: 0
+            backgroundColor: [mustard, '#ffe082', '#bfa442']
           }]
         },
-        options: {
-          animation: false,
-          plugins: { legend: { display: false } }
-        }
+        options
       });
 
       new Chart(macroChart, {
         type: 'bar',
         data: {
-          labels: ['Today'],
-          datasets: [
-            { label: 'Protein', data: [80], backgroundColor: '#ffdc73' },
-            { label: 'Carbs', data: [150], backgroundColor: mustard },
-            { label: 'Fat', data: [60], backgroundColor: '#9c7f2f' }
-          ]
+          labels: ['Protein', 'Carbs', 'Fats'],
+          datasets: [{
+            data: [80, 150, 60],
+            backgroundColor: [mustard, '#ffd966', '#9c7f2f']
+          }]
         },
-        options: {
-          animation: false,
-          plugins: { legend: { display: false } },
-          responsive: true,
-          scales: {
-            x: { stacked: true, display: false },
-            y: { stacked: true, display: false }
-          }
-        }
+        options
       });
     };
   </script>

@@ -2,20 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fitness App</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Dashboard UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Oswald&family=Lobster&family=Courier+Prime&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #1f1f1f;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+    }
+
+    .dashboard {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .tile {
+      background-color: #3a3a3a;
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 140px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .tile:hover {
+      background-color: #4a4a4a;
+    }
+
+    .tile.yellow {
+      background-color: #ffeb3b;
+      color: #000;
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .label-set {
+      text-align: center;
+    }
+
+    .font1 { font-family: 'Roboto', sans-serif; font-size: 0.9rem; }
+    .font2 { font-family: 'Oswald', sans-serif; font-size: 0.9rem; }
+    .font3 { font-family: 'Lobster', cursive; font-size: 0.9rem; }
+    .font4 { font-family: 'Courier Prime', monospace; font-size: 0.9rem; }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      font-weight: 300;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
-  <div class="app-container">
-    <h1 class="app-title">🏋️‍♂️ FitLife Dashboard</h1>
-    <div class="tile-grid">
-      <div class="tile">Workout Plans</div>
-      <div class="tile">Track Progress</div>
-      <div class="tile">Meal Plans</div>
-      <div class="tile">Hydration</div>
-      <div class="tile">Reminders</div>
-      <div class="tile">Achievements</div>
+  <h1>Fitness Dashboard</h1>
+  <div class="dashboard">
+    <!-- Macros Tile -->
+    <div class="tile">
+      <div class="icon">🥗</div>
+      <div class="label-set">
+        <div class="font1">Macros</div>
+        <div class="font2">Macros</div>
+        <div class="font3">Macros</div>
+        <div class="font4">Macros</div>
+      </div>
+    </div>
+
+    <!-- BMI Tile -->
+    <div class="tile yellow">
+      <div class="icon">📊</div>
+      <div class="label-set">
+        <div class="font1">BMI</div>
+        <div class="font2">BMI</div>
+        <div class="font3">BMI</div>
+        <div class="font4">BMI</div>
+      </div>
+    </div>
+
+    <!-- BMR / TDEE Tile -->
+    <div class="tile">
+      <div class="icon">🔥</div>
+      <div class="label-set">
+        <div class="font1">BMR / TDEE</div>
+        <div class="font2">BMR / TDEE</div>
+        <div class="font3">BMR / TDEE</div>
+        <div class="font4">BMR / TDEE</div>
+      </div>
+    </div>
+
+    <!-- Workout Log Tile -->
+    <div class="tile">
+      <div class="icon">🏋️‍♂️</div>
+      <div class="label-set">
+        <div class="font1">Workout Log</div>
+        <div class="font2">Workout Log</div>
+        <div class="font3">Workout Log</div>
+        <div class="font4">Workout Log</div>
+      </div>
+    </div>
+
+    <!-- Meal Tracker Tile -->
+    <div class="tile yellow">
+      <div class="icon">🍎</div>
+      <div class="label-set">
+        <div class="font1">Meal Tracker</div>
+        <div class="font2">Meal Tracker</div>
+        <div class="font3">Meal Tracker</div>
+        <div class="font4">Meal Tracker</div>
+      </div>
+    </div>
+
+    <!-- Macro Chart Tile -->
+    <div class="tile">
+      <div class="icon">📈</div>
+      <div class="label-set">
+        <div class="font1">Macro Chart</div>
+        <div class="font2">Macro Chart</div>
+        <div class="font3">Macro Chart</div>
+        <div class="font4">Macro Chart</div>
+      </div>
     </div>
   </div>
 </body>

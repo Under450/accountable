@@ -1,89 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fitness Dashboard</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #1f1f1f;
-      font-family: 'Roboto', sans-serif;
-      color: white;
-    }
-    h1 {
-      text-align: center;
-      font-weight: 300;
-      margin: 1rem;
-    }
-    .dashboard {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      padding: 1rem;
-    }
-    .tile {
-      background-color: #D4AF37;
-      color: #000;
-      border-radius: 10px;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 180px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
-    }
-    .tile svg {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 0.5rem;
-      fill: #000;
-    }
-    .tile span {
-      font-size: 1rem;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fitness Dashboard</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #1f1f1f;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+  h1 {
+    text-align: center;
+    font-weight: 300;
+    margin: 1rem;
+  }
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .tile {
+    background-color: #D4AF37;
+    color: #000;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 180px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
+  .tile svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+    fill: #000;
+  }
+  .tile span {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+</style>
 </head>
 <body>
+
   <h1>Fitness Dashboard</h1>
   <div class="dashboard">
-  
-    <!-- Workout Log -->
+
+    <!-- Workout Log (Dumbbells) -->
     <div class="tile">
-      <svg viewBox="0 0 24 24"><path d="M20.57 14.86l-1.423-1.423A4 4 0 0016 9.743V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2.257a4.001 4.001 0 00-3.147 1.693L6.86 14.86l-.571-.572A2 2 0 004.571 14H3a1 1 0 000 2h1.571a2 2 0 001.429-.586l3.429-3.429a4.02 4.02 0 003.147 1.695A4.028 4.028 0 0014 15.743v2.257a1 1 0 001 1h2a1 1 0 001-1v-2.257a4.001 4.001 0 003.147-1.693l1.423 1.423a2 2 0 002.828 0 2 2 0 000-2.828z"></path></svg>
+      <svg viewBox="0 0 64 64">
+        <path d="M2 22h6v20H2zm54 0h6v20h-6z"/>
+        <rect x="12" y="18" width="40" height="4"/>
+        <rect x="12" y="42" width="40" height="4"/>
+        <rect x="8" y="14" width="48" height="4"/>
+        <rect x="8" y="46" width="48" height="4"/>
+        <rect x="20" y="22" width="4" height="20"/>
+        <rect x="40" y="22" width="4" height="20"/>
+      </svg>
       <span>Workout Log</span>
     </div>
 
-    <!-- Macros -->
+    <!-- Macros (Macro Circle Segments) -->
     <div class="tile">
-      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm4.9 12.8l-7.07 2.62a8.018 8.018 0 011.49-9.25zm-8.56-5.94a8.015 8.015 0 012.7-1.24v8.53z"></path></svg>
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="#ffd700"/>
+        <path d="M50 5 A45 45 0 0 1 95 50 L50 50 Z" fill="#c49f28"/>
+        <path d="M50 50 L95 50 A45 45 0 0 1 50 95 Z" fill="#a58c3f"/>
+      </svg>
       <span>Macros</span>
     </div>
 
-    <!-- BMI -->
+    <!-- BMI (Tape Measure) -->
     <div class="tile">
-      <svg viewBox="0 0 24 24"><path d="M17 6H7v2h10V6zm-2 4H9v2h6v-2zm-2 4H9v2h4v-2z"></path><path d="M19 3H5a2 2 0 00-2 2v14l4-4h12a2 2 0 002-2V5a2 2 0 00-2-2z"></path></svg>
+      <svg viewBox="0 0 100 100">
+        <path d="M20 10 H80 A10 10 0 0 1 90 20 V80 A10 10 0 0 1 80 90 H20 A10 10 0 0 1 10 80 V20 A10 10 0 0 1 20 10 Z" fill="none" stroke="#000" stroke-width="5"/>
+        <line x1="30" y1="30" x2="60" y2="30" stroke="#000" stroke-width="4"/>
+        <line x1="30" y1="40" x2="50" y2="40" stroke="#000" stroke-width="4"/>
+        <line x1="30" y1="50" x2="45" y2="50" stroke="#000" stroke-width="4"/>
+        <line x1="30" y1="60" x2="40" y2="60" stroke="#000" stroke-width="4"/>
+      </svg>
       <span>BMI</span>
     </div>
 
-    <!-- BMR / TDEE -->
+    <!-- BMR / TDEE (Energy/Flame) -->
     <div class="tile">
-      <svg viewBox="0 0 24 24"><path d="M12 2a6 6 0 00-6 6c0 2.21 1.79 4 4 4h4a6 6 0 00-6-6zm1 8h-2v2h2zm7 7v-2a5 5 0 00-5-5h-1v2h1a3 3 0 013 3v2zm-16 0v-2a3 3 0 013-3h1v-2H6a5 5 0 00-5 5v2z"></path></svg>
+      <svg viewBox="0 0 64 64">
+        <path d="M32 2 C20 18 24 30 32 38 C40 46 44 60 32 62 C20 64 22 54 14 46 C6 38 10 26 22 18 C14 26 12 36 18 44 C24 52 26 62 32 62"/>
+        <path d="M32 2 C44 18 40 30 32 38 C24 46 20 60 32 62 C44 64 42 54 50 46 C58 38 56 26 44 18 C52 26 54 36 48 44 C42 52 40 62 32 62"/>
+      </svg>
       <span>BMR / TDEE</span>
     </div>
 
-    <!-- Meal Tracker -->
+    <!-- Meal Tracker (Menu Icon) -->
     <div class="tile">
-      <svg viewBox="0 0 24 24"><path d="M7 2C5.9 2 5 2.9 5 4v7a3 3 0 006 0V7h4v4a3 3 0 006 0V4c0-1.1-.9-2-2-2H7zm1 7V4h10v5h-2V7h-6v2H8zM5 20h14v2H5z"></path></svg>
+      <svg viewBox="0 0 64 64">
+        <rect x="8" y="15" width="48" height="6" rx="3" ry="3"/>
+        <rect x="8" y="29" width="48" height="6" rx="3" ry="3"/>
+        <rect x="8" y="43" width="48" height="6" rx="3" ry="3"/>
+      </svg>
       <span>Meal Tracker</span>
     </div>
 
-    <!-- Macro Chart -->
+    <!-- Macro Chart (Placeholder) -->
     <div class="tile">
-      <svg viewBox="0 0 24 24"><path d="M2 22h20v-2H2zm4-4h12v-2H6zm2-4h8v-2H8z"></path></svg>
+      <svg viewBox="0 0 64 64">
+        <rect x="10" y="40" width="12" height="18"/>
+        <rect x="26" y="32" width="12" height="26"/>
+        <rect x="42" y="24" width="12" height="34"/>
+      </svg>
       <span>Macro Chart</span>
     </div>
 

@@ -2,96 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fitness App Dashboard</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #111;
-      color: white;
-    }
-
-    .tile-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .tile {
-      position: relative;
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .tile:hover {
-      transform: scale(1.02);
-    }
-
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
-      display: flex;
-      align-items: flex-end;
-      padding: 1rem;
-    }
-
-    .overlay h2 {
-      margin: 0;
-      font-size: 1.3rem;
-    }
-
-    @media (min-width: 600px) {
-      .tile-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 900px) {
-      .tile-container {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness App</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="tile-container">
-    <!-- Macros -->
-    <div class="tile" style="background-image: url('https://thealmondeater.com/wp-content/uploads/2020/02/Vegan-Meal-Prep-Bowls-1.jpg');">
-      <div class="overlay"><h2>🥗 Macros</h2></div>
-    </div>
-
-    <!-- BMI -->
-    <div class="tile" style="background-image: url('https://www.evergreen-life.co.uk/wp-content/uploads/2022/02/fitness-waist.png');">
-      <div class="overlay"><h2>📊 BMI</h2></div>
-    </div>
-
-    <!-- BMR / TDEE -->
-    <div class="tile" style="background-image: url('https://cdn.muscleandstrength.com/sites/default/files/field/feature-image/workout/full-body-shock-feautre.jpg');">
-      <div class="overlay"><h2>⚡ BMR / TDEE</h2></div>
-    </div>
-
-    <!-- Workout Logbook -->
-    <div class="tile" style="background-image: url('https://cdn11.bigcommerce.com/s-z6voly6yu7/images/stencil/1028x1028/products/1991/28346/GDR60B-0O2A5355-SDR-1028px__09093.1737473815.jpg?c=1');">
-      <div class="overlay"><h2>🏋️ Workout Log</h2></div>
-    </div>
-
-    <!-- Meal Logger -->
-    <div class="tile" style="background-image: url('https://cdn.dribbble.com/userupload/44055924/file/original-335d355bab94d71cbec9d21bc0ca19b2.png');">
-      <div class="overlay"><h2>🍎 Meal Logger</h2></div>
-    </div>
-
-    <!-- Macro Chart -->
-    <div class="tile" style="background-image: url('https://i.pinimg.com/736x/93/e6/87/93e68707cd9694d22a58157e54cb1edb.jpg');">
-      <div class="overlay"><h2>📈 Macro Chart</h2></div>
+  <div class="app-container">
+    <h1 class="app-title">🏋️‍♂️ FitLife Dashboard</h1>
+    <div class="tile-grid">
+      <div class="tile">Workout Plans</div>
+      <div class="tile">Track Progress</div>
+      <div class="tile">Meal Plans</div>
+      <div class="tile">Hydration</div>
+      <div class="tile">Reminders</div>
+      <div class="tile">Achievements</div>
     </div>
   </div>
 </body>

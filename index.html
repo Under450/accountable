@@ -1,128 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Fitness Dashboard</title>
-<style>
-  body {
-    margin: 0;
-    background-color: #1f1f1f;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-  }
-  h1 {
-    text-align: center;
-    font-weight: 300;
-    margin: 1rem;
-  }
-  .dashboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-    gap: 1rem;
-    padding: 1rem;
-  }
-  .tile {
-    background-color: #D4AF37;
-    color: #000;
-    border-radius: 10px;
-    padding: 1rem;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
-    transition: background 0.2s ease;
-  }
-  .tile:hover {
-    background-color: #c7a62f;
-  }
-  .tile svg {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 0.5rem;
-    fill: #000;
-  }
-  .tile span {
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1f1f1f;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin-top: 1rem;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .tile {
+      background-color: #D4AF37;
+      color: #000;
+      border-radius: 10px;
+      padding: 1rem;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .tile:hover {
+      background-color: #c7a62f;
+      transform: translateY(-2px);
+    }
+    .tile svg {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 0.5rem;
+      fill: #000;
+    }
+    .tile span {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Fitness Dashboard</h1>
+  <h1>Fitness Dashboard</h1>
 
-<div class="dashboard">
+  <div class="dashboard">
 
-  <!-- Workout Log -->
-  <div class="tile" onclick="alert('Workout Log Clicked!')">
-    <svg viewBox="0 0 64 64">
-      <path d="M2 22h6v20H2zm54 0h6v20h-6z"/>
-      <rect x="12" y="18" width="40" height="4"></rect>
-      <rect x="12" y="42" width="40" height="4"></rect>
-      <rect x="8" y="14" width="48" height="4"></rect>
-      <rect x="8" y="46" width="48" height="4"></rect>
-      <rect x="20" y="22" width="4" height="20"></rect>
-      <rect x="40" y="22" width="4" height="20"></rect>
-    </svg>
-    <span>Workout Log</span>
+    <!-- Workout Log -->
+    <div class="tile" onclick="alert('Workout Log Clicked!')">
+      <svg viewBox="0 0 512 512">
+        <path d="M504.971,207.029h-40v-40c0-4.418-3.582-8-8-8h-32c-4.418,0-8,3.582-8,8v40h-32v-40c0-4.418-3.582-8-8-8h-32
+          c-4.418,0-8,3.582-8,8v40h-48v-48c0-4.418-3.582-8-8-8h-32c-4.418,0-8,3.582-8,8v48h-48v-40c0-4.418-3.582-8-8-8H104
+          c-4.418,0-8,3.582-8,8v40H64v-40c0-4.418-3.582-8-8-8H24c-4.418,0-8,3.582-8,8v32c0,4.418,3.582,8,8,8h40v48H24
+          c-4.418,0-8,3.582-8,8v32c0,4.418,3.582,8,8,8h40v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h32v40
+          c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h48v48c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-48h48v40
+          c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h32v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-32c0-4.418-3.582-8-8-8h-40
+          v-48h40c4.418,0,8-3.582,8-8v-32C512.971,210.611,509.389,207.029,504.971,207.029z"/>
+      </svg>
+      <span>Workout Log</span>
+    </div>
+
+    <!-- Macros -->
+    <div class="tile" onclick="alert('Macros Clicked!')">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="#ffdc73"/>
+        <path d="M50 5 A45 45 0 0 1 95 50 L50 50 Z" fill="#ffd700"/>
+        <path d="M50 50 L95 50 A45 45 0 0 1 50 95 Z" fill="#c49f28"/>
+      </svg>
+      <span>Macros</span>
+    </div>
+
+    <!-- Body Metrics (BMR/BMI/TDEE) -->
+    <div class="tile" onclick="alert('Body Metrics Clicked!')">
+      <svg viewBox="0 0 64 64">
+        <!-- Flame (simplified) -->
+        <path d="M32 2 C20 18 24 30 32 38 C40 46 44 60 32 62 C20 64 22 54 14 46 C6 38 10 26 22 18 C14 26 12 36 18 44 C24 52 26 62 32 62" fill="#000"/>
+        <!-- Tape measure bar -->
+        <rect x="8" y="48" width="48" height="4" fill="#000"/>
+        <rect x="8" y="54" width="6" height="2" fill="#000"/>
+        <rect x="16" y="54" width="6" height="2" fill="#000"/>
+        <rect x="24" y="54" width="6" height="2" fill="#000"/>
+      </svg>
+      <span>Body Metrics</span>
+    </div>
+
+    <!-- Meal Tracker (reuses dumbbell for now) -->
+    <div class="tile" onclick="alert('Meal Tracker Clicked!')">
+      <svg viewBox="0 0 512 512">
+        <path d="M504.971,207.029h-40v-40c0-4.418-3.582-8-8-8h-32c-4.418,0-8,3.582-8,8v40h-32v-40c0-4.418-3.582-8-8-8h-32
+          c-4.418,0-8,3.582-8,8v40h-48v-48c0-4.418-3.582-8-8-8h-32c-4.418,0-8,3.582-8,8v48h-48v-40c0-4.418-3.582-8-8-8H104
+          c-4.418,0-8,3.582-8,8v40H64v-40c0-4.418-3.582-8-8-8H24c-4.418,0-8,3.582-8,8v32c0,4.418,3.582,8,8,8h40v48H24
+          c-4.418,0-8,3.582-8,8v32c0,4.418,3.582,8,8,8h40v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h32v40
+          c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h48v48c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-48h48v40
+          c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h32v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-32c0-4.418-3.582-8-8-8h-40
+          v-48h40c4.418,0,8-3.582,8-8v-32C512.971,210.611,509.389,207.029,504.971,207.029z"/>
+      </svg>
+      <span>Meal Tracker</span>
+    </div>
+
+    <!-- Macro Chart -->
+    <div class="tile" onclick="alert('Macro Chart Clicked!')">
+      <svg viewBox="0 0 64 64">
+        <rect x="10" y="40" width="12" height="18" />
+        <rect x="26" y="32" width="12" height="26" />
+        <rect x="42" y="24" width="12" height="34" />
+      </svg>
+      <span>Macro Chart</span>
+    </div>
+
+    <!-- Premium -->
+    <div class="tile" onclick="alert('Login for Premium Access')">
+      <svg viewBox="0 0 48 48">
+        <text x="24" y="32" font-size="32px" text-anchor="middle" fill="#000">?</text>
+      </svg>
+      <span>Premium</span>
+    </div>
+
   </div>
-
-  <!-- Macros -->
-  <div class="tile" onclick="alert('Macros Clicked!')">
-    <svg viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="45" fill="#ffdc73"></circle>
-      <path d="M50 5 A45 45 0 0 1 95 50 L50 50 Z" fill="#ffd700"></path>
-      <path d="M50 50 L95 50 A45 45 0 0 1 50 95 Z" fill="#c49f28"></path>
-    </svg>
-    <span>Macros</span>
-  </div>
-
-  <!-- Body Metrics (BMR/BMI/TDEE) -->
-  <div class="tile" onclick="alert('Body Metrics Clicked!')">
-    <svg viewBox="0 0 64 64">
-      <!-- Flame -->
-      <path d="M32 2 C20 18 24 30 32 38 C40 46 44 60 32 62 C20 64 22 54 14 46 C6 38 10 26 22 18 C14 26 12 36 18 44 C24 52 26 62 32 62" fill="#000"></path>
-      <!-- Tape measure bar -->
-      <rect x="8" y="48" width="48" height="8" fill="#000"></rect>
-      <rect x="8" y="56" width="48" height="4" fill="#000"></rect>
-    </svg>
-    <span>Body Metrics</span>
-  </div>
-
-  <!-- Meal Tracker -->
-  <div class="tile" onclick="alert('Meal Tracker Clicked!')">
-    <svg viewBox="0 0 64 64">
-      <rect x="8" y="15" width="48" height="6" rx="3" ry="3"></rect>
-      <rect x="8" y="29" width="48" height="6" rx="3" ry="3"></rect>
-      <rect x="8" y="43" width="48" height="6" rx="3" ry="3"></rect>
-    </svg>
-    <span>Meal Tracker</span>
-  </div>
-
-  <!-- Macro Chart (Placeholder Icon) -->
-  <div class="tile" onclick="alert('Macro Chart Clicked!')">
-    <svg viewBox="0 0 64 64">
-      <rect x="10" y="40" width="12" height="18"></rect>
-      <rect x="26" y="32" width="12" height="26"></rect>
-      <rect x="42" y="24" width="12" height="34"></rect>
-    </svg>
-    <span>Macro Chart</span>
-  </div>
-
-  <!-- Premium / Future -->
-  <div class="tile" onclick="alert('Premium / Login Clicked!')">
-    <svg viewBox="0 0 48 48">
-      <text x="24" y="32" font-size="32px" text-anchor="middle" fill="#000">?</text>
-    </svg>
-    <span>Premium</span>
-  </div>
-
-</div>
 
 </body>
 </html>
